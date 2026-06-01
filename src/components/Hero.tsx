@@ -89,14 +89,14 @@ export default function Hero() {
             </motion.a>
 
             <motion.a 
-               href="https://docs.google.com/document/d/1nroL4fj6yCovXBERxtE5D1IYcpja_Jl_cyLwtpDLzaY/export?format=pdf"
+               href="https://docs.google.com/document/d/1nroL4fj6yCovXBERxtE5D1IYcpja_Jl_cyLwtpDLzaY/preview"
                target="_blank"
                rel="noopener noreferrer"
                aria-label="Download CV"
-               title="Download CV"
+               title="View CV"
                className="px-4 py-3.5 flex items-center gap-2 rounded-xl text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-cyan-400 transition-colors"
             >
-              <Download className="w-5 h-5" />
+              <Printer className="w-5 h-5" />
               <span className="text-sm font-medium">{t('hero.download_cv', 'Download CV')}</span>
             </motion.a>
 
