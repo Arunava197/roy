@@ -1,0 +1,22 @@
+{
+  "entities": {
+    "ScoreEntry": {
+      "title": "Score Entry",
+      "description": "A high score entry for a game",
+      "type": "object",
+      "properties": {
+        "game": { "type": "string", "enum": ["snake", "memory"] },
+        "playerName": { "type": "string" },
+        "score": { "type": "number" },
+        "createdAt": { "type": "timestamp" }
+      },
+      "required": ["game", "playerName", "score", "createdAt"]
+    }
+  },
+  "firestore": {
+    "/scores/{scoreId}": {
+      "schema": { "$ref": "#/entities/ScoreEntry" },
+      "description": "Global leaderboard scores for Interactive Games"
+    }
+  }
+}

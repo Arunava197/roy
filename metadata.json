@@ -1,0 +1,8 @@
+{
+  "name": "Arunava Chandan Roy | Portfolio",
+  "description": "Professional 3D data geometry portfolio for Arunava Chandan Roy, Business Intelligence Analyst / Data Analyst.",
+  "requestFramePermissions": [
+    "geolocation"
+  ],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

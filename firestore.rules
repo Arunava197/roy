@@ -1,0 +1,46 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Global Default Deny
+    match /{document=**} {
+      allow read, write: if false;
+    }
+
+    // Helper Functions
+    function isValidId(id) {
+      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
+    }
+
+    function incoming() {
+      return request.resource.data;
+    }
+
+    function existing() {
+      return resource.data;
+    }
+
+    // Validation for ScoreEntry
+    function isValidScoreEntry(data) {
+      return data.keys().hasAll(['game', 'playerName', 'score', 'createdAt']) &&
+             data.keys().size() == 4 &&
+             data.game is string && (data.game == 'snake' || data.game == 'memory') &&
+             data.playerName is string && data.playerName.size() >= 1 && data.playerName.size() <= 30 &&
+             data.score is number &&
+             data.score >= 0 && data.score <= 10000 &&
+             data.createdAt == request.time;
+    }
+
+    match /scores/{scoreId} {
+      // Anyone can read the leaderboards
+      allow read: if true;
+      
+      // Anyone can write a score, but it must strictly match the validation
+      allow create: if isValidId(scoreId) && isValidScoreEntry(incoming());
+      
+      // We don't allow updates or deletes to history for now
+      allow update, delete: if false;
+    }
+  }
+}
