@@ -11,6 +11,9 @@ const PLAYLIST = [
   // -------------------------------------------------------------
   // Example of local file you can add:
   // { id: 'local-1', title: 'My MP3 Upload', src: '/my-song.mp3' },
+  { id: 'local-1', title: 'Porcupine Tree - Russia on Ice', src:  encodeURI('./Porcupine Tree - Russia on Ice.mp3') },
+  { id: 'local-2', title: 'Rastay - Arnob', src:  encodeURI('./Rastay - Arnob.mp3') },
+  { id: 'local-3', title: 'Bon Jovi - Blaze Of Glory', src:  encodeURI('./Bon Jovi - Blaze Of Glory.mp3') },
   { id: 5, title: 'Dark is the Night', src: encodeURI('./Dark is the Night.mp3') },
   { id: 6, title: 'Meditation', src: encodeURI('./Meditation.mp3') },
   { id: 7, title: 'SOA - Come join the murder', src: encodeURI('./SOA - Come join the murder.mp3') },
