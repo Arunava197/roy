@@ -25,14 +25,16 @@ export default function Experience() {
           </div>
           
           <div className="md:ml-auto z-10 w-full md:w-auto flex justify-center md:justify-end">
-            <button 
-              onClick={() => window.print()}
+            <a 
+              href="https://docs.google.com/document/d/1nroL4fj6yCovXBERxtE5D1IYcpja_Jl_cyLwtpDLzaY/export?format=pdf"
+              target="_blank"
+              rel="noopener noreferrer"
               className="px-4 py-2 flex items-center gap-2 rounded-xl text-slate-600 dark:text-slate-300 font-semibold hover:bg-slate-200 dark:hover:bg-white/10 transition-all border border-slate-200 dark:border-white/10 bg-white/50 dark:bg-white/5 backdrop-blur-sm"
-              title="Print CV"
+              title="View CV as PDF"
             >
               <Printer className="w-4 h-4" />
-              <span>Print CV</span>
-            </button>
+              <span>View CV PDF</span>
+            </a>
           </div>
         </motion.div>
 
